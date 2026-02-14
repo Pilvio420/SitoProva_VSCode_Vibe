@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Gallery - Il nostro sito</title>
+</head>
+<body>
+    <h1 class="text-center">Galleria</h1>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="./galleria immagini/pngegg (1).png" alt="Logo">
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="About.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="Gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+                    <li><a href="Contatti.html"><i class="fas fa-envelope"></i> Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section class="container">
+            <h2 class="gallery-title"><i class="fas fa-camera"></i> I nostri lavori in evidenza</h2>
+            <p class="gallery-subtitle">Scopri la nostra collezione di progetti realizzati con passione e dedizione</p>
+        </section>
+
+        <div class="slideshow-container">
+            <!-- Slides -->
+            <div class="slide active">
+                <img src="./galleria immagini/pexels-asphotography-230544.jpg" alt="Innovazione Digitale">
+                <div class="slide-overlay">
+                    <div class="slide-title">Innovazione Digitale</div>
+                    <div class="slide-description">Trasformazione tecnologica per il tuo business</div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="./galleria immagini/pexels-deyvi-romero-15310-89955.jpg" alt="Web Design">
+                <div class="slide-overlay">
+                    <div class="slide-title">Web Design Moderno</div>
+                    <div class="slide-description">Interfacce responsive e accattivanti</div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="./galleria immagini/pexels-pixabay-267482.jpg" alt="Sviluppo Software">
+                <div class="slide-overlay">
+                    <div class="slide-title">Front-end - HTML, CSS, JavaScript</div>
+                    <div class="slide-description">Soluzioni personalizzate e performanti</div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="./galleria immagini/pexels-realtoughcandy-11035543.jpg" alt="Strategia Marketing">
+                <div class="slide-overlay">
+                    <div class="slide-title">Back-end...</div>
+                    <div class="slide-description">Organizzazione, logica e prestazione per un back-end solido</div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="./galleria immagini/pexels-rsantos1232-3888149.jpg" alt="Consulenza IT">
+                <div class="slide-overlay">
+                    <div class="slide-title">CMS - Wordpress</div>
+                    <div class="slide-description">Soluzioni rapide e semplici per ogni esigenza</div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="./galleria immagini/sagoma violino.jpg" alt="Cloud Solutions">
+                <div class="slide-overlay">
+                    <div class="slide-title">Cloud Solutions</div>
+                    <div class="slide-description">Infrastrutture scalabili e sicure</div>
+                </div>
+            </div>
+
+            <!-- Controlli -->
+            <div class="slide-controls">
+                <button class="slide-btn" onclick="changeSlide(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slide-btn" onclick="changeSlide(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Indicatori -->
+            <div class="slide-indicators" id="indicators"></div>
+
+            <!-- Contatore slide -->
+            <div class="slide-counter">
+                <span id="current-slide">1</span> / <span id="total-slides">6</span>
+            </div>
+        </div>
+
+        <div class="gallery-info">
+            <h2>Scegli il tuo progetto preferito</h2>
+            <p>Naviga le frecce per esplorare i nostri lavori. Lo slideshow si aggiorna automaticamente ogni 5 secondi.</p>
+        </div>
+    </main>
+
+    <footer>
+        <ul class="footer-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="About.html"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="Gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="Contatti.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        <p>Copyright © 2024 - Tutti i diritti riservati | <a href="Privacy.html" style="color: #0066cc;">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        let autoplayInterval;
+
+        // Inizializzazione indicatori
+        const indicatorsContainer = document.getElementById('indicators');
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot' + (i === 0 ? ' active' : '');
+            dot.onclick = () => goToSlide(i);
+            indicatorsContainer.appendChild(dot);
+        }
+
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        function showSlide(n) {
+            // Rimuovi la classe active da tutti gli slide
+            <!DOCTYPE html>
+            <!-- Pagina Gallery: slideshow di immagini locali -->
+            <html lang="it">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <link rel="stylesheet" href="style.css">
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+                    <title>Gallery</title>
+                </head>
+                <body>
+                    <!-- Header con logo e menu -->
+                    <header>
+                        <div class="header-content">
+                            <div class="logo">
+                                <img src="./galleria immagini/pngegg (1).png" alt="Logo">
+                            </div>
+                            <nav>
+                                <ul class="nav-menu">
+                                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                                    <li><a href="About.html"><i class="fas fa-info-circle"></i> About</a></li>
+                                    <li><a href="Gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+                                    <li><a href="Contatti.html"><i class="fas fa-envelope"></i> Contatti</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </header>
+
+                    <!-- Contenuto principale: slideshow -->
+                    <main>
+                        <h1 class="text-center">Galleria</h1>
+
+                        <div class="slideshow-container" id="slideshow">
+                            <div class="slide fade">
+                                <img src="galleria immagini/pexels-alesia-kozik-6771041.jpg" alt="immagine1">
+                            </div>
+                            <div class="slide fade">
+                                <img src="galleria immagini/pexels-alexander-suhorucov-6457576.jpg" alt="immagine2">
+                            </div>
+                            <div class="slide fade">
+                                <img src="galleria immagini/pexels-henry-&-co-6620873.jpg" alt="immagine3">
+                            </div>
+
+                            <!-- Controlli freccia -->
+                            <a class="prev">&#10094;</a>
+                            <a class="next">&#10095;</a>
+                        </div>
+
+                        <!-- Indicatori (puntini) -->
+                        <div class="dots" id="dots"></div>
+                    </main>
+
+                    <!-- Footer comune -->
+                    <footer>
+                        <ul class="footer-menu">
+                            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                            <li><a href="About.html"><i class="fas fa-info-circle"></i> About</a></li>
+                            <li><a href="Gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+                            <li><a href="Contatti.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                        </ul>
+                        <p>Copyright © 2024 - Tutti i diritti riservati | <a href="Privacy.html" style="color: #0066cc;">Privacy Policy</a></p>
+                    </footer>
+
+                    <!-- Script slideshow: gestione slide, indicatori, autoplay e pausa al passaggio del mouse -->
+                    <script>
+                        // indice corrente
+                        let slideIndex = 0;
+
+                        // selettori principali
+                        const slides = document.querySelectorAll('.slide');
+                        const slideshow = document.getElementById('slideshow');
+                        const dotsContainer = document.getElementById('dots');
+
+                        // mostra la slide indicata dall'indice
+                        function showSlide(index) {
+                            slides.forEach((s, i) => {
+                                s.style.display = (i === index) ? 'block' : 'none';
+                            });
+                            const dots = document.querySelectorAll('.dot');
+                            dots.forEach((d, i) => {
+                                d.className = d.className.replace(' active', '');
+                                if (i === index) d.className += ' active';
+                            });
+                        }
+
+                        // avanza/torna di n slide
+                        function nextSlide(n) {
+                            slideIndex = (slideIndex + n + slides.length) % slides.length;
+                            showSlide(slideIndex);
+                        }
+
+                        // vai a una slide specifica
+                        function goToSlide(n) {
+                            slideIndex = n;
+                            showSlide(slideIndex);
+                        }
+
+                        // crea gli indicatori (puntini) dinamicamente
+                        slides.forEach((s, i) => {
+                            const dot = document.createElement('span');
+                            dot.classList.add('dot');
+                            dot.addEventListener('click', () => goToSlide(i));
+                            dotsContainer.appendChild(dot);
+                        });
+
+                        // inizializza visualizzazione
+                        showSlide(slideIndex);
+
+                        // autoplay ogni 5 secondi
+                        let autoplay = setInterval(() => nextSlide(1), 5000);
+
+                        // pausa autoplay al passaggio del mouse
+                        slideshow.addEventListener('mouseenter', () => clearInterval(autoplay));
+                        slideshow.addEventListener('mouseleave', () => autoplay = setInterval(() => nextSlide(1), 5000));
+
+                        // eventi per le frecce
+                        document.querySelector('.prev').addEventListener('click', () => nextSlide(-1));
+                        document.querySelector('.next').addEventListener('click', () => nextSlide(1));
+                    </script>
+                </body>
+            </html>
